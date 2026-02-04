@@ -2,7 +2,7 @@
 
 # 📷 AnyCam2Ros
 
-**将任意摄像头变成 ROS2 图像话题 — 统一的硬件配置流程**
+**将任意摄像头变成 ROS2 image topic**
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![ROS2](https://img.shields.io/badge/ROS2-Humble%20%7C%20Iron%20%7C%20Jazzy-green.svg)](https://docs.ros.org/)
